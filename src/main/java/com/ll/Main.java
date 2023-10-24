@@ -24,6 +24,9 @@ class Main {
                 }
             }else if(order.equals("목록")){
                 read();
+            }else if(order.equals("삭제")){
+                read();
+                delete(scanner);
             }
 
 
@@ -54,15 +57,16 @@ class Main {
     static void read(){
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
-
         for(int i=0;i<phraseList.size();i++){
             System.out.println(i+1 + " / " +phraseList.get(i).name + " / " + phraseList.get(i).phrase);
         }
-
-
     }
 
     static void delete(Scanner sc){
+        System.out.println("몇번 명언을 삭제하시겠습니까?");
+        int a= Integer.parseInt(sc.next());
+        phraseList.remove(a-1);
+        System.out.println(a+"번 명언 삭제됨");
 
 
     }
