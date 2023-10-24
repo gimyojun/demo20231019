@@ -15,6 +15,7 @@ class Main {
             order = scanner.next();
             if(order.equals("종료")){
                 System.out.println("명언 앱을 종료 합니다.");
+
                 return;
             }else if(order.equals("등록")){
                 if(register(scanner)){
@@ -90,6 +91,8 @@ class Main {
         }
         phraseList.remove(a-1);
         System.out.println(a+"번 명언 삭제됨");
+    }
+    static void save(){
 
 
     }
