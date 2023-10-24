@@ -18,7 +18,7 @@ class Main {
                 return;
             }else if(order.equals("등록")){
                 if(register(scanner)){
-                    System.out.println("명언 등록 완료");
+                    continue;
                 }else{
                     System.out.println("명언 등록 실패");
                 }
@@ -39,7 +39,10 @@ class Main {
         System.out.println("명언을 입력하세요 : ");
         b = sc.next();
         phrase rgst_phrase = new phrase(a,b);
+
+
         phraseList.add(rgst_phrase);
+        System.out.println(phraseList.size() + "번 명언이 등록되었습니다");
         return true;
 
     }
@@ -51,6 +54,10 @@ class Main {
     static void read(){
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
+
+        for(int i=0;i<phraseList.size();i++){
+            System.out.println(i+1 + " / " +phraseList.get(i).name + " / " + phraseList.get(i).phrase);
+        }
 
 
     }
