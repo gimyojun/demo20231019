@@ -27,9 +27,6 @@ class Main {
             }else if(order.equals("삭제")){
                 read();
                 delete(scanner);
-            }else if(order.equals("수정")){
-                read();
-                update(scanner);
             }
 
 
@@ -54,24 +51,8 @@ class Main {
     }
 
     static void update(Scanner sc){
-        System.out.println("몇번 명언을 수정하시겠습니까?");
-        int a= Integer.parseInt(sc.next());
-        if(a < 0 || a > phraseList.size()){
-            System.out.println(a+"번 명언은 존재하지 않습니다");
-            return;
-        }
 
-        String phrase;
-        System.out.println("기존 명언 : " + phraseList.get(a-1).phrase);
-        System.out.println("수정할 명언을 입력하세요 : ");
-        phrase = sc.next();
-        phraseList.get(a-1).phrase = phrase;
 
-        String name;
-        System.out.println("기존 작가명 : " + phraseList.get(a-1).name);
-        System.out.println("수정할 작가명을 입력하세요 : ");
-        name = sc.next();
-        phraseList.get(a-1).name = name;
     }
     static void read(){
         System.out.println("번호 / 작가 / 명언");
@@ -84,10 +65,6 @@ class Main {
     static void delete(Scanner sc){
         System.out.println("몇번 명언을 삭제하시겠습니까?");
         int a= Integer.parseInt(sc.next());
-        if(a < 0 || a > phraseList.size()){
-            System.out.println(a+"번 명언은 존재하지 않습니다");
-            return;
-        }
         phraseList.remove(a-1);
         System.out.println(a+"번 명언 삭제됨");
 
